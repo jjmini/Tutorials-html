@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>A 求和</title>
+		<!-- MathJax -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		<script type="text/javascript" async
+			src="../js/MathJax/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<style>
+			td{border: solid black 1px;}
+		</style>
+	</head>
+	<body>
+<h1 style="text-align: center;">
+    A-1&nbsp;&nbsp;&nbsp;&nbsp;求和公式及其性质<br/>
+</h1>
+<p style="text-indent: 2em;">
+    给定一个数列a<sub>1</sub>,a<sub>2</sub>,...,a<sub>n</sub>，其有限和记为：\[\sum_{k=1}^{n}{a_k}\]。若其极限\[\lim_{n\to\infty}\sum_{k=1}^{n}{a_k}\]不存在，则这个级数是发散；反之，他就是收敛的。
+</p>
+<h2 style="text-indent: 0em;">
+    <span style="text-indent: 0em;">1.1 线性性质</span>
+</h2>
+<p style="text-indent: 2em;">
+    <span style="text-indent: 0em;">对任意实数c和任意有限序列a<sub>1</sub>,a<sub>2</sub>,...,a<sub>n</sub>和b<sub>1</sub>,b<sub>2</sub>,...,b<sub>n</sub>，都有\[\sum_{k=1}^{n}{(ca_k+b_k)}=c\sum_{k=1}^{n}{a_k}+\sum_{k=1}^{n}{b_k}\]，这就是收敛级数的线性性质。</span>
+</p>
+<p style="text-indent: 2em;">
+    <span style="text-indent: 0em;">同样，对于含有渐近记号的项求和，都有\[\sum_{k=1}^{n}{\Theta(f(k))}=\Theta(\sum_{k=1}^{n}{f(k)})\]。</span>
+</p>
+<h2 style="text-indent: 0em;">
+    <span style="text-indent: 0em;">1.2 常见级数</span>
+</h2>
+<table>
+    <tbody>
+        <tr class="firstRow">
+            <td width="132" valign="top" style="word-break: break-all; background-color: rgb(187, 187, 187);">
+                <span style="color: #FFFFFF;">级数名称</span>
+            </td>
+            <td width="313" valign="top" style="word-break: break-all; background-color: rgb(187, 187, 187);">
+                <span style="color: #FFFFFF;">公式</span>
+            </td>
+            <td width="1043" valign="top" style="word-break: break-all; background-color: rgb(187, 187, 187);">
+                <span style="color: #FFFFFF;">和等式</span>
+            </td>
+        </tr>
+        <tr>
+            <td width="132" valign="top" style="word-break: break-all;">
+                等差
+            </td>
+            <td width="313" valign="top" style="word-break: break-all;">
+                <p>
+                    \[\lim_{k=0}^{n}{k}=1+2+...+n\]
+                </p>
+            </td>
+            <td width="1043" valign="top" style="word-break: break-all;">
+                \[\lim_{k=0}^{n}{k}={1 \over 2}n(n+1)=\Theta(n^2)\]<br/>
+            </td>
+        </tr>
+        <tr>
+            <td width="132" valign="top" style="word-break: break-all;">
+                平方
+            </td>
+            <td width="313" valign="top" style="word-break: break-all;">
+                \[\lim_{k=0}^{n}{k^2}=1+4+...+n^2\]
+            </td>
+            <td width="1043" valign="top" style="word-break: break-all;">
+                \[\lim_{k=0}^{n}{k^2}={n(n+1)(2n+1) \over 6}\]
+            </td>
+        </tr>
+        <tr>
+            <td width="132" valign="top" style="word-break: break-all;">
+                立方
+            </td>
+            <td width="313" valign="top" style="word-break: break-all;">
+                \[\lim_{k=0}^{n}{k^3}=1+8+...+n^3\]
+            </td>
+            <td width="1043" valign="top" style="word-break: break-all;">
+                \[\lim_{k=0}^{n}{k^3}={n^2(n+1)^2 \over 4}\]
+            </td>
+        </tr>
+        <tr>
+            <td width="132" valign="top" style="word-break: break-all;">
+                几何
+            </td>
+            <td width="313" valign="top" style="word-break: break-all;">
+                <p>
+                    对于实数$x\ne0$，\[\lim_{k=0}^{n}{x^k}=1+x+...+x^2...+x^n\]
+                </p>
+            </td>
+            <td width="1043" valign="top" style="word-break: break-all;">
+                \[\lim_{k=0}^{n}{x^k}={x^{n+1}-1 \over x-1}\]，当和是无穷的且$\left|x\right|&lt;1$时，\[\lim_{k=0}^{n}{x^k}={1 \over 1-x}\]
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
+                调和
+            </td>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
+                \[\lim_{k=0}^{n}{1 \over k}=1+{1 \over 2}+{1 \over 3}+...+{1 \over n}\]
+            </td>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
+                \[\lim_{k=0}^{n}{1 \over k}=\ln{n}+O(1)\]
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 style="text-indent: 0em;">
+    <span style="text-indent: 0em;"></span>1.3 级数的变换操作
+</h2>
+<h3 style="text-indent: 0em;">
+    1.3.1 微积分变换<br/>
+</h3>
+<p style="text-indent: 2em;">
+    某一级数记为：\[\sum_{k=0}^{\infty}{f(k)}=\]，分别对其两边求导，等式仍成立：\[\sum_{k=0}^{\infty}{x \cdot f^{&#39;}(k)}=x \cdot g^{&#39;}(x)\]；分别对其两边求积，等式仍成立：\[\sum_{k=0}^{\infty}{\int_{0}^{\infty}f(k) \over x}={\int_{0}^{\infty}g(x) \over x}\]
+</p>
+<h3 style="text-indent: 0em;">
+    <span style="text-indent: 32px;">1.3.2 迭套变换</span>
+</h3>
+<p style="text-indent: 2em;">
+    <span style="text-indent: 0em;">某一级数：\[\sum_{k=1}^{n}{a_k}\]，若存在$b_k$使得$a_k=b_k-b_{k-1}$或$a_k=b_k-b_{k+1}$，那么\[\sum_{k=1}^{n}{a_k}=\sum_{k=1}^{n}{b_k-b_{k-1}}\]或\[\sum_{k=0}^{n-1}{a_k}=\sum_{k=0}^{n-1}{b_k-b_{k+1}}\]称之为迭套变换。其和为：\[\sum_{k=1}^{n}{b_k-b_{k-1}}=b_n-b_0\]或\[\sum_{k=0}^{n-1}{b_k-b_{k+1}}=b_0-b_n\]
+</p>
+<h2 style="text-indent: 0em;">
+    <span style="text-indent: 0em;">1.4 连乘级数<br/></span>
+</h2>
+<p style="text-indent: 2em;">
+    <span style="text-indent: 0em;">有限乘积<span style="text-indent: 32px;">a</span><sub style="text-indent: 32px; white-space: normal;">1</sub><span style="text-indent: 32px;">,a</span><sub style="text-indent: 32px; white-space: normal;">2</sub><span style="text-indent: 32px;">,...,a</span><sub style="text-indent: 32px; white-space: normal;">n</sub>可以写成\[\prod_{k=1}^{n}{a_k}\]，如果n=0，乘积的值定义为1。通过等式\[\lg(\prod_{k=1}^{n}{a_k})=\sum_{k=1}^{n}\lg{a_k}\]转换成连加级数。</span>
+</p>
+	</body>
+</html>
