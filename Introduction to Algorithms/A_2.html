@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>A-2   确定求和时间的界</title>
+		<!-- MathJax -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		<script type="text/javascript" async
+			src="../js/MathJax/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<style>
+			td{border: solid black 1px;}
+		</style>
+	</head>
+	<body>
+<h1 style="text-align: center;">
+    A-2&nbsp; &nbsp; 确定求和时间的界<br/>
+</h1>
+<h2 style="text-indent: 0em;">
+    2.1 数学归纳法<br/>
+</h2>
+<p style="text-indent: 2em;">
+    证明<span style="text-indent: 32px;">$\sum_{k=1}^{n}{f(k)}$的值等于g(n)。</span>
+</p>
+<ol style="list-style-type: decimal;" class=" list-paddingleft-2">
+    <li>
+        <p style="text-indent: 2em;">
+            左边为$\sum_{k=1}^{n}{f(k)}$右边为$g(n)$，当n=1代入左右两边，验证是否相等，若相等则进行下一步。<br/>
+        </p>
+    </li>
+    <li>
+        <p style="text-indent: 2em;">
+            假设$\sum_{k=1}^{n}{f(k)}=g(n)$，然后左右两边加$f(n+1)$，使得$\sum_{k=1}^{n+1}{f(k)}=\sum_{k=1}^{n}{f(k)}+f(n+1)=g(n)+f(n+1)$，最后判断$g(n)+f(n+1)$是否等于$g(n+1)$，若是，则$\sum_{k=1}^{n}{f(k)}=g(n)$成立，证毕。
+        </p>
+    </li>
+</ol>
+<p style="text-indent: 2em;">
+    证明$\sum_{k=1}^{n}{f(k)} \le O(g(n))=c \cdot g(n)$。
+</p>
+<ol class=" list-paddingleft-2" style="list-style-type: decimal;">
+    <li>
+        <p style="text-indent: 2em;">
+            左边为$\sum_{k=1}^{n}{f(k)}$右边为$c \cdot g(n)$，当n=1代入左右两边，计算不等式$f(1) \le c \cdot g(1)$，求$c \ge a_1$，若能求取$a_1$进行下一步。
+        </p>
+    </li>
+    <li>
+        <p style="text-indent: 2em;">
+            假设$\sum_{k=1}^{n}{f(k)}=g(n)$，然后左右两边加$f(n+1)$，计算不等式$\sum_{k=1}^{n+1}{f(k)}=\sum_{k=1}^{n}{f(k)}+f(n+1) \le g(n)+f(n+1)$，求$c \ge a_2(n)$（n可能不存在，即$a_2(n)$是常数），若能求取$a_2(n)$且$\lim_{n \to \infty}{a_2(n)}$收敛，再进行下一步求证。
+        </p>
+    </li>
+    <li>
+        <p style="text-indent: 2em;">
+            若$c \ge a_1$与$c \ge \lim_{n \to \infty}{a_2(n)}$能够重合，那么$\sum_{k=1}^{n}{f(k)}=O(g(n))=c \cdot g(n)$成立，证毕。
+        </p>
+    </li>
+</ol>
+<h2 style="text-indent: 0em;">
+    2.2 确定级数各项的界<br/>
+</h2>
+<p style="text-indent: 2em;">
+    对级数$\sum_{k=1}^{n}{a_k}$，如果令$a_{max}=max_{1 \le k \le n}{a_k}$，则\[\sum_{k=1}^{n}{a_k} \le na_{max}\]<br/>
+</p>
+<h3 style="text-indent: 0em;">
+    2.2.1 几何级数的界
+</h3>
+<p style="text-indent: 2em;">
+    给定一个级数$\sum_{k=1}^{n}{a_k}$，假设对所有的$k \ge 0$有$a_{k+1}/a_k \le r$，而$0 \lt r \lt 1$是一个常量。那么可以把一个无穷递减几何级数作为和的界限，因为$a_l \le a_0r^k$，所以\[\sum_{k=0}^{n}a_k \le \sum_{k=0}^{\infty}a_0r^k=a_0\sum_{k=0}^{\infty}r^k=a_0{1 \over 1-r}\]
+</p>
+<h2 style="text-indent: 0em;">
+    2.3 级数分割变换<br/>
+</h2>
+<p style="text-indent: 2em;">
+    在和$\sum_{k=0}^{n}{a_k}$中的每个项$a_k$都独立于n的情况。对于任何常数$k_0 \gt 0$，可以写成\[\sum_{k=0}^{n}{a_k}=\sum_{k=0}^{k_0-1}{a_k}+\sum_{k=k_0}^{n}{a_k}=\Theta(1)+\sum_{k=k_0}^{n}{a_k}\]
+</p>
+<h3 style="text-indent: 0em;">
+    2.2.3 通过积分求近似值
+</h3>
+<p style="text-indent: 2em;">
+    当一个和表示成$\sum_{k=m}^{n}{f(k)}$
+</p>
+<ol class=" list-paddingleft-2" style="list-style-type: decimal;">
+    <li>
+        <p style="text-indent: 2em;">
+            当$f(k)$由m开始单调递增时，它的近似上下界为：\[\int_{m-1}^{n}{f(x)dx} \le \sum_{k=m}^{n}{f(k)} \le \int_{m}^{n+1}{f(x)dx}\]
+        </p>
+    </li>
+    <li>
+        <p style="text-indent: 2em;">
+            当$f(k)$由m开始单调递减时，它的近似上下界为：\[\int_{m}^{n+1}{f(x)dx} \le \sum_{k=m}^{n}{f(k)} \le \int_{m-1}^{n}{f(x)dx}\]<br/>
+        </p>
+    </li>
+</ol>
+	</body>
+</html>
