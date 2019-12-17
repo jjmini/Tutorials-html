@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>A-1    求和公式及其性质</title>
+		<!-- MathJax -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		<script type="text/javascript" async
+			src="../js/MathJax/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<style>
+			td{border: solid black 1px;}
+		</style>
+	</head>
+	<body>
+<h1 style="text-align: center;">
+    B-1 集合<br/>
+</h1>
+<h2>
+    1.1 集合运算规律<br/>
+</h2>
+<table>
+    <tbody>
+        <tr class="firstRow">
+            <td width="214" valign="top" style="word-break: break-all;">
+                集合A和B的交集
+            </td>
+            <td width="305" valign="top" style="word-break: break-all;">
+                \[A \cap B = \left \{ x:x \in A且x \in B \right \}\]
+            </td>
+        </tr>
+        <tr>
+            <td width="214" valign="top" style="word-break: break-all;">
+                集合A和B的并集
+            </td>
+            <td width="305" valign="top" style="word-break: break-all;">
+                \[A \cup B = \left \{ x:x \in A且x \in B \right \}\]
+            </td>
+        </tr>
+        <tr>
+            <td width="214" valign="top" style="word-break: break-all;">
+                集合A和B的差集
+            </td>
+            <td width="305" valign="top" style="word-break: break-all;">
+                \[A - B = \left \{ x:x \in A且x \in B \right \}\]
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    他们服从如下定律：
+</p>
+<table>
+    <tbody>
+        <tr class="firstRow">
+            <td width="114" valign="top" style="word-break: break-all;">
+                空集率
+            </td>
+            <td width="198" valign="top" style="word-break: break-all;">
+                <p>
+                    \[A \cap \varnothing = \varnothing\]
+                </p>
+                <p>
+                    \[A \cup \varnothing = \varnothing\]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114" valign="top" style="word-break: break-all;">
+                幂等率
+            </td>
+            <td width="198" valign="top" style="word-break: break-all;">
+                <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;">
+                    \[A \cap A = A\]
+                </p>
+                <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;">
+                    \[A \cup A = A\]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114" valign="top" style="word-break: break-all;">
+                交换律
+            </td>
+            <td width="198" valign="top" style="word-break: break-all;">
+                <p>
+                    \[A \cap B = B \cap A\]
+                </p>
+                <p>
+                    \[A \cup B = B \cup A\]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114" valign="top" style="word-break: break-all;">
+                分配率
+            </td>
+            <td width="198" valign="top" style="word-break: break-all;">
+                <p>
+                    \[A \cap \left ( B \cap C \right ) = \left ( A \cap B \right ) \cap C\]
+                </p>
+                <p>
+                    \[A \cup \left ( B \cup C \right ) = \left ( A \cup B \right ) \cup C\]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114" valign="top" style="word-break: break-all;">
+                分配率
+            </td>
+            <td width="198" valign="top" style="word-break: break-all;">
+                <p>
+                    \[A \cap \left ( B \cup C \right ) = \left ( A \cap B \right ) \cup \left ( A \cap C \right )\]
+                </p>
+                <p>
+                    \[A \cup \left ( B \cap C \right ) = \left ( A \cup B \right ) \cap \left ( A \cup C \right )\]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114" valign="top" style="word-break: break-all;">
+                吸收率
+            </td>
+            <td width="198" valign="top" style="word-break: break-all;">
+                <p>
+                    \[A \cap \left ( A \cup B \right ) = A\]
+                </p>
+                <p>
+                    \[A \cup \left ( A \cap B \right ) = A\]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
+                德$\cdot$摩根率
+            </td>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
+                <p>
+                    \[A - \left ( A \cap B \right ) = \left ( A - B \right ) \cup \left ( A - C \right )\]
+                </p>
+                <p>
+                    \[A - \left ( A \cup B \right ) = \left ( A - B \right ) \cap \left ( A - C \right )\]
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <br/>
+</p>		
+	</body>
+</html>
